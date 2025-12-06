@@ -6,8 +6,6 @@ i. Scope:
 
 ii. Devices & OS:
 
-    Android: Samsung Galaxy A12 — Android 11
-    Android: Google Pixel 6 — Android 13
     Android: Xiaomi Redmi Note 14 — Android 15
     Desktop Browsers: Chrome , Firefox , Microsoft Edge on Windows 11
     Mobile Browser (responsive): Chrome on Android
@@ -62,41 +60,41 @@ iii. Types of tests to run:
 
 | TC ID | Test Title | Device / Browser | OS / Version | App/Web Version | Date & Time | Status | Notes |
 |-------|-------------|------------------|---------------|------------------|--------------|--------|--------|
-| TC-01 | Install & Launch (AppTestingService) | Xiaomi Redmi Note 10 | Android 12 | v1.0.3 | 2025-11-10 11:45 AM | Pass | Installed & launched successfully; no crash |
-| TC-02 | Install & Launch (EchoGPT Chat) | Samsung A52 | Android 13 | v2.1.0 | 2025-11-10 11:50 AM | Pass | Splash screen loaded; no ANR |
-| TC-03 | Homepage Load (apptestingservice.com) | Chrome | Windows 10 | Web live version | 2025-11-10 12:00 PM | Pass | Loaded in under 4s |
-| TC-04 | Homepage Load (echogpt.live) | Chrome | Windows 10 | Web live version | 2025-11-10 12:02 PM | Pass | No console errors detected |
-| TC-05 | Create Account Signup | Pixel 6 | Android 14 | v1.0.3 | 2025-11-10 12:10 PM | Pass | Account created successfully |
-| TC-06 | Login with Valid Credentials | Xiaomi Redmi Note 10 | Android 12 | v1.0.3 | 2025-11-10 12:12 PM | Pass | Login successful |
-| TC-07 | Login Invalid (Negative) | Samsung A52 | Android 13 | v2.1.0 | 2025-11-10 12:14 PM | Pass | Correct error message displayed |
-| TC-08 | Password Reset Flow | Chrome | Windows 10 | Web live version | 2025-11-10 12:20 PM | Fail | Reset email not received (Bug-01) |
-| TC-09 | Chat Send/Receive | EchoGPT Android App | Android 13 | v2.1.0 | 2025-11-10 12:25 PM | Pass | Bot response received |
-| TC-10 | File Upload (<5MB) | Chrome | Windows 10 | Web live version | 2025-11-10 12:30 PM | Pass | File uploaded successfully |
-| TC-11 | File Upload Large (50MB) | Chrome | Windows 10 | Web live version | 2025-11-10 12:33 PM | Pass | Proper size error displayed |
-| TC-12 | Form Validation | Chrome | Windows 10 | Web live version | 2025-11-10 12:35 PM | Pass | Validation working properly |
-| TC-13 | Responsive Navigation | Chrome DevTools | Windows 10 | Web live version | 2025-11-10 12:37 PM | Pass | Menu responsive at all breakpoints |
-| TC-14 | Offline Handling | EchoGPT Android | Android 13 | v2.1.0 | 2025-11-10 12:40 PM | Fail | App freezes on sending message offline (Bug-02) |
-| TC-15 | Session Timeout | Chrome | Windows 10 | Web live version | 2025-11-10 12:50 PM | Pass | Session expired and auto logout |
-| TC-16 | Accessibility Labels | Chrome + NVDA | Windows 10 | Web live version | 2025-11-10 1:00 PM | Fail | Missing ARIA labels for buttons (Bug-03) |
-| TC-17 | Color Contrast | Chrome | Windows 10 | Web live version | 2025-11-10 1:05 PM | Pass | Contrast mostly acceptable |
-| TC-18 | XSS Attempt | Chrome | Windows 10 | Web live version | 2025-11-10 1:10 PM | Pass | Script sanitized |
-| TC-19 | Insecure Storage Check | Android File System | Android 12 | v1.0.3 | 2025-11-10 1:12 PM | Pass | No plaintext token stored |
-| TC-20 | API Error Handling | Chrome | Windows 10 | Web live version | 2025-11-10 1:15 PM | Pass | Friendly error displayed; no stacktrace |
-| TC-21 | UI Layout Screens | Samsung A52 | Android 13 | v2.1.0 | 2025-11-10 1:20 PM | Pass | Layout adjusts properly |
-| TC-22 | Orientation Change | Pixel 6 | Android 14 | v1.0.3 | 2025-11-10 1:25 PM | Pass | State preserved on rotation |
-| TC-23 | Performance Load Time | Chrome | Windows 10 | Web live version | 2025-11-10 1:28 PM | Pass | Load time <5s |
-| TC-24 | Logout Flow | Chrome | Windows 10 | Web live version | 2025-11-10 1:32 PM | Pass | User logged out correctly |
-| TC-25 | Push Notifications | Samsung A52 | Android 13 | v1.0.3 | 2025-11-10 1:35 PM | Not Tested | No test environment |
-| TC-26 | Error Messages Usability | EchoGPT App | Android 13 | v2.1.0 | 2025-11-10 1:40 PM | Pass | Messages clear |
-| TC-27 | Rate Limiting | Chrome | Windows 10 | Web live version | 2025-11-10 1:42 PM | Pass | Requests throttled properly |
-| TC-28 | Data Persistence | Pixel 6 | Android 14 | v1.0.3 | 2025-11-10 1:45 PM | Pass | Data persisted correctly |
-| TC-29 | Cross Browser Test | Firefox/Edge | Windows 10 | Web live version | 2025-11-10 1:50 PM | Pass | UI consistent |
-| TC-30 | SQL Injection | Chrome | Windows 10 | Web live version | 2025-11-10 1:55 PM | Pass | Input sanitized |
+| TC-01 | Install & Launch (AppTestingService) | Xiaomi Redmi Note 14 | Android 15 | v1.0.3 | 2025-12-02 11:45 AM | Pass | Installed & launched successfully; no crash |
+| TC-02 | Install & Launch (EchoGPT Chat) | Xiaomi Redmi Note 14 | Android 15 | v2.1.0 | 2025-12-02 11:50 AM | Pass | Splash screen loaded; no ANR |
+| TC-03 | Homepage Load (apptestingservice.com) | Chrome | Windows 11 | Web live version | 2025-12-02 12:00 PM | Pass | Loaded in under 4s |
+| TC-04 | Homepage Load (echogpt.live) | Chrome | Windows 11 | Web live version | 2025-12-02 12:02 PM | Pass | No console errors detected |
+| TC-05 | Create Account Signup | Xiaomi Redmi Note 14 | Android 15 | v1.0.3 | 2025-12-02 12:10 PM | Pass | Account created successfully |
+| TC-06 | Login with Valid Credentials | Xiaomi Redmi Note 14 | Android 15 | v1.0.3 | 2025-12-02 12:12 PM | Pass | Login successful |
+| TC-07 | Login Invalid (Negative) | Xiaomi Redmi Note 14 | Android 15 | v2.1.0 | 2025-12-02 12:14 PM | Pass | Correct error message displayed |
+| TC-08 | Password Reset Flow | Chrome | Windows 11 | Web live version | 2025-12-02 12:20 PM | Fail | Reset email not received (Bug-01) |
+| TC-09 | Chat Send/Receive(EchoGPT Android App) | Xiaomi Redmi Note 14 | Android 15 | v2.1.0 | 2025-12-02 12:25 PM | Pass | Bot response received |
+| TC-10 | File Upload (<5MB) | Chrome | Windows 11 | Web live version | 2025-12-02 12:30 PM | Pass | File uploaded successfully |
+| TC-11 | File Upload Large (50MB) | Chrome | Windows 11 | Web live version | 2025-12-02 12:33 PM | Pass | Proper size error displayed |
+| TC-12 | Form Validation | Chrome | Windows 11 | Web live version | 2025-12-02 12:35 PM | Pass | Validation working properly |
+| TC-13 | Responsive Navigation | Chrome DevTools | Windows 11 | Web live version | 2025-12-02 12:37 PM | Pass | Menu responsive at all breakpoints |
+| TC-14 | Offline Handling | EchoGPT Android | Android 15 | v2.1.0 | 2025-12-02 12:40 PM | Fail | App freezes on sending message offline (Bug-02) |
+| TC-15 | Session Timeout | Chrome | Windows 11 | Web live version | 2025-12-02 12:50 PM | Pass | Session expired and auto logout |
+| TC-16 | Accessibility Labels | Chrome + NVDA | Windows 11 | Web live version | 2025-12-02 1:00 PM | Fail | Missing ARIA labels for buttons (Bug-03) |
+| TC-17 | Color Contrast | Chrome | Windows 11 | Web live version | 2025-12-02 1:05 PM | Pass | Contrast mostly acceptable |
+| TC-18 | XSS Attempt | Chrome | Windows 11 | Web live version | 2025-12-02 1:10 PM | Pass | Script sanitized |
+| TC-19 | Insecure Storage Check | Android File System | Android 15 | v1.0.3 | 2025-12-02 1:12 PM | Pass | No plaintext token stored |
+| TC-20 | API Error Handling | Chrome | Windows 11 | Web live version | 2025-12-02 1:15 PM | Pass | Friendly error displayed; no stacktrace |
+| TC-21 | UI Layout Screens | Xiaomi Redmi Note 14 | Android 15 | v2.1.0 | 2025-12-02 1:20 PM | Pass | Layout adjusts properly |
+| TC-22 | Orientation Change | Xiaomi Redmi Note 14 | Android 15 | v1.0.3 | 2025-12-02 1:25 PM | Pass | State preserved on rotation |
+| TC-23 | Performance Load Time | Chrome | Windows 11 | Web live version | 2025-12-02 1:28 PM | Pass | Load time <5s |
+| TC-24 | Logout Flow | Chrome | Windows 11 | Web live version | 2025-12-02 1:32 PM | Pass | User logged out correctly |
+| TC-25 | Push Notifications | Xiaomi Redmi Note 14 | Android 15 | v1.0.3 | 2025-12-02 1:35 PM | Not Tested | No test environment |
+| TC-26 | Error Messages Usability | EchoGPT App | Android 15 | v2.1.0 | 2025-12-02 1:40 PM | Pass | Messages clear |
+| TC-27 | Rate Limiting | Chrome | Windows 11 | Web live version | 2025-12-02 1:42 PM | Pass | Requests throttled properly |
+| TC-28 | Data Persistence | Xiaomi Redmi Note 14 | Android 15 | v1.0.3 | 2025-12-02 1:45 PM | Pass | Data persisted correctly |
+| TC-29 | Cross Browser Test | Firefox/Edge | Windows 11 | Web live version | 2025-12-02 1:50 PM | Pass | UI consistent |
+| TC-30 | SQL Injection | Chrome | Windows 11 | Web live version | 2025-12-02 1:55 PM | Pass | Input sanitized |
 
 
 3. Bug Reports
 
-Bug 01 — Password Reset Email Not Received
+## Bug 01 — Password Reset Email Not Received
 
 ### **Bug ID:** BUG-001  
 ### **Title:** Password reset email is not delivered after submitting "Forgot Password"  
@@ -105,10 +103,10 @@ Bug 01 — Password Reset Email Not Received
 ### **Status:** Open  
 
 ### **Environment:**  
-- Device: Windows 10 (Chrome 129)  
+- Device: Windows 11 (Chrome)  
 - Platform: https://apptestingservice.com  
 - Network: Stable WiFi  
-- Date: 2025-11-10  
+- Date: 2025-12-02  
 
 ### **Steps to Reproduce:**  
 1. Open the website https://apptestingservice.com  
@@ -125,6 +123,7 @@ A password reset email should be received immediately or within 1–2 minutes.
 No email received in inbox or spam.  
 No confirmation email visible in server logs.
 
+
 ## Bug 02 — App Freezes When Sending Message Offline
 
 ### **Bug ID:** BUG-002  
@@ -134,11 +133,11 @@ No confirmation email visible in server logs.
 ### **Status:** Open  
 
 ### **Environment:**  
-- Device: Samsung A52  
-- OS: Android 13  
+- Device: Xiaomi Redmi Note 14  
+- OS: Android 15
 - App: EchoGPT v2.1.0  
 - Network: Mobile Data OFF  
-- Date: 2025-11-10  
+- Date: 2025-12-03  
 
 ### **Steps to Reproduce:**  
 1. Open the **EchoGPT Chat App**  
@@ -155,6 +154,7 @@ The app should remain responsive.
 The app **freezes** for 10–12 seconds and sometimes becomes unresponsive.  
 Force close is required in some cases.
 
+
 ## Bug 03 — Missing ARIA Labels for Buttons (Accessibility Issue)
 
 ### **Bug ID:** BUG-003  
@@ -164,15 +164,15 @@ Force close is required in some cases.
 ### **Status:** Open  
 
 ### **Environment:**  
-- Device: Windows 10  
-- Browser: Chrome 129  
+- Device: Windows 11
+- Browser: Chrome  
 - Accessibility Tools: NVDA screen reader  
 - Website: https://echogpt.live  
-- Date: 2025-11-10  
+- Date: 2025-12-03  
 
 ### **Steps to Reproduce:**  
 1. Open **https://echogpt.live**  
-2. Turn on **NVDA** or **VoiceOver**  
+2. Turn on **NVDA**  
 3. Navigate through the main banner and top buttons  
 4. Listen to screen reader output  
 
