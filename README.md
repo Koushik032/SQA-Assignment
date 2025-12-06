@@ -92,7 +92,7 @@ iii. Types of tests to run:
 | TC-30 | SQL Injection | Chrome | Windows 11 | Web live version | 2025-12-02 1:55 PM | Pass | Input sanitized |
 
 
-3. Bug Reports
+4. Bug Reports
 
 ## Bug 01 — Password Reset Email Not Received
 
@@ -188,3 +188,230 @@ Screen reader reads:
 - “Clickable… clickable item…”  
 No meaningful labels available.
 
+
+5. Exploratory Testing Notes
+
+Date: 04 December 2025
+Duration: 40 minutes
+Tester: Koushik Roy
+Scope: Android Apps (AppTestingService, EchoGPT App) and Websites (echogpt.live, apptestingservice.com)
+
+  ##  1. Test Charter (Mission for the Session)
+
+    Explore the core user flows, chat behavior, file upload, navigation, and offline/error handling to identify functional issues, usability gaps, performance delays, and UI inconsistencies.
+    The goal is to uncover bugs that scripted test cases may miss.
+
+  ##  2. Areas Explored During the Session
+
+    App installation & launch experience
+
+    Signup & login flows
+
+    Chat message send/receive
+
+    File upload (PDF, image, large file)
+
+    Offline behavior (no network test)
+
+    Navigation responsiveness (web)
+
+    Form validation and error messages
+
+    UI layout on different screen sizes
+
+    Accessibility behavior (screen reader brief check)
+
+    Browser console warnings (web)
+
+  ##  3. Key Findings (Issues, Observations, Bugs)
+
+    Functional/Usability Issues
+
+    Password reset email not received
+
+    Severity: High
+
+    Occurs on apptestingservice.com
+
+    No confirmation email received even after waiting 10 minutes.
+
+    Chat freezes when sending message offline (EchoGPT app)
+
+    Severity: Critical
+
+    App becomes unresponsive for 10–12 seconds.
+
+    No proper offline message shown.
+
+    EchoGPT web chat sometimes delays response (3–5 sec longer)
+
+    Severity: Medium
+
+    Not always reproducible; suspected backend latency.
+
+    File upload progress missing
+
+    Severity: Medium
+
+    Large file (>3MB) shows no progress indicator; user unsure if upload is working.
+
+    Navigation menu overlaps text on small-width mobile view
+
+    Severity: Low
+
+    Menu items overlay with main headline.
+
+    UI/Design Issues
+
+    Chat bubble alignment inconsistent
+
+    Severity: Low
+
+    Long messages wrap awkwardly on screen.
+
+    Button hover state looks different across browsers
+
+    Severity: Low
+
+    Chrome vs Firefox differences detected.
+
+    Signup form error messages not aligned properly
+
+    Severity: Medium
+
+    Validation messages appear too close to input fields.
+
+    Accessibility Issues
+
+    Missing ARIA labels for buttons on echogpt.live
+
+    Severity: Medium
+
+    Screen reader reads “button” instead of descriptive names.
+
+    Contrast issue on secondary buttons
+
+    Severity: Low
+
+    Fails WCAG contrast ratio guidelines.
+
+    Console/Logs Issues (Web)
+
+    Minor JavaScript warnings on console
+    Example:
+
+    Warning: Unknown props passed to DOM element
+
+
+    Severity: Low
+
+##  4. Notes & Recommendations
+
+    Add offline handling messages across both apps.
+
+    Improve error messages to be clearer and friendlier.
+
+    Add upload progress bar to improve user confidence.
+
+    Improve responsiveness for smaller devices.
+
+    Add ARIA labels to ensure accessibility compliance.
+
+    Fix chat freeze issue, which is a major blocker.
+
+##  5. Overall Summary of Session
+
+    The exploratory session found multiple user-impacting issues, especially in:
+
+    Forgot password flow
+
+    Offline chat handling
+
+    Accessibility
+
+    UI layout on small screens
+
+    Missing progress indicators
+
+    No critical security issues were discovered during this time window, but some functional problems significantly affect user experience.\
+
+
+6. # Short Summary Report
+
+## 1. Overview
+A full test cycle was executed on two Android applications (**AppTestingService** and **EchoGPT Chat App**) and two websites (**apptestingservice.com** and **echogpt.live**).  
+The testing objectives were to validate:
+
+- Functional correctness  
+- UI quality and usability  
+- Stability and performance  
+- Accessibility compliance  
+- Basic security measures  
+
+Testing methods included **manual test cases**, **exploratory testing**, and **basic negative/security checks**.
+
+---
+
+## 2. Major Issues Found
+
+| ID       | Issue Summary                                         | Severity  | Status |
+|----------|------------------------------------------------------|-----------|--------|
+| BUG-001  | Password reset email not delivered                   | High      | Open   |
+| BUG-002  | EchoGPT app freezes when sending a message offline  | Critical  | Open   |
+| BUG-003  | Missing ARIA labels on key buttons (accessibility failure) | Medium    | Open   |
+
+**Impact:**  
+- Password reset issue blocks user account recovery.  
+- Offline freeze affects app stability and usability.  
+- Missing accessibility labels hinder visually impaired users and fail WCAG guidelines.
+
+---
+
+## 3. Release Readiness Assessment
+
+| Category       | Status             | Notes                                         |
+|----------------|------------------|-----------------------------------------------|
+| Functional     | Partially Ready | Core flows functional; fixes required in some areas |
+| Performance    | ✅ Ready           | Load times and interaction speed acceptable |
+| Stability      | Not Fully Ready | Offline freeze bug affects reliability      |
+| Security       | Acceptable      | No major vulnerabilities detected; minor sanitization checks pending |
+| Accessibility  | Needs Improvement | Missing ARIA labels reduce compliance       |
+
+**Overall Release Decision:** **NOT READY** for full release  
+**Recommendation:** Apply a **hotfix round** before production deployment.
+
+---
+
+## 4. Risk List
+
+| Risk                        | Description                                  | Impact | Likelihood |
+|------------------------------|----------------------------------------------|--------|-----------|
+| Password reset not working    | Users cannot recover accounts               | High   | High      |
+| App freezing offline          | Poor user experience; risk of uninstalls   | High   | Medium    |
+| Missing accessibility labels  | Excludes disabled users; compliance failure| Medium | Medium    |
+| Large file upload handling    | May crash low-memory devices               | Medium | Low       |
+| Chat API rate-limiting        | Risk of abuse or server overload           | Medium | Low       |
+
+---
+
+## 5. Recommended Next Steps
+
+1. **Critical & High-Severity Bug Fixes**  
+   - Implement proper offline handling and retry logic for chat.  
+   - Fix password reset API or SMTP integration.  
+   - Add missing ARIA labels and alt texts for accessibility.
+
+2. **Regression & Testing**  
+   - Re-test core flows after bug fixes.  
+   - Add automated unit/UI tests for login, chat, and file upload flows.  
+   - Conduct a full accessibility audit (WCAG 2.1 AA).  
+
+3. **UX & Performance Improvements**  
+   - Improve error messages for network/upload issues.  
+   - Plan a performance load test for chat endpoints under peak load.  
+   - Prepare a staging environment with proper logging for future test cycles.
+
+---
+
+## 6. Final Summary
+The system demonstrates strong potential, with most core functionalities operational. However, **stability, account recovery, and accessibility** issues must be addressed before release. With a focused bug-fix round and targeted regression testing, the product can reach **production-ready quality** in the next iteration.
