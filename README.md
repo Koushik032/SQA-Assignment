@@ -24,8 +24,6 @@ iii. Types of tests to run:
 
 2. Test Cases:
 
-# Test Cases — Apps & Websites
-
 | ID | Title | Steps | Expected Result | Severity |
 |----|--------|--------|----------------|----------|
 | TC-01 | Install & Launch (AppTestingService) | 1. Open Play Store → search `com.apptestingservice` → Install → Launch | App installs and launches to onboarding/login screen without crash | High |
@@ -58,3 +56,135 @@ iii. Types of tests to run:
 | TC-28 | Data persistence & sync | 1. Save data → Logout → Login again | Data persists and syncs properly | High |
 | TC-29 | Cross-browser compatibility | 1. Test on Chrome/Firefox/Edge | Consistent behavior/UI across browsers | Medium |
 | TC-30 | SQL Injection Input (Negative) | 1. Enter `' OR '1'='1` in fields → Submit | Input sanitized; no bypass or data exposure | High |
+
+
+3. Test Execution Log
+
+| TC ID | Test Title | Device / Browser | OS / Version | App/Web Version | Date & Time | Status | Notes |
+|-------|-------------|------------------|---------------|------------------|--------------|--------|--------|
+| TC-01 | Install & Launch (AppTestingService) | Xiaomi Redmi Note 10 | Android 12 | v1.0.3 | 2025-11-10 11:45 AM | Pass | Installed & launched successfully; no crash |
+| TC-02 | Install & Launch (EchoGPT Chat) | Samsung A52 | Android 13 | v2.1.0 | 2025-11-10 11:50 AM | Pass | Splash screen loaded; no ANR |
+| TC-03 | Homepage Load (apptestingservice.com) | Chrome | Windows 10 | Web live version | 2025-11-10 12:00 PM | Pass | Loaded in under 4s |
+| TC-04 | Homepage Load (echogpt.live) | Chrome | Windows 10 | Web live version | 2025-11-10 12:02 PM | Pass | No console errors detected |
+| TC-05 | Create Account Signup | Pixel 6 | Android 14 | v1.0.3 | 2025-11-10 12:10 PM | Pass | Account created successfully |
+| TC-06 | Login with Valid Credentials | Xiaomi Redmi Note 10 | Android 12 | v1.0.3 | 2025-11-10 12:12 PM | Pass | Login successful |
+| TC-07 | Login Invalid (Negative) | Samsung A52 | Android 13 | v2.1.0 | 2025-11-10 12:14 PM | Pass | Correct error message displayed |
+| TC-08 | Password Reset Flow | Chrome | Windows 10 | Web live version | 2025-11-10 12:20 PM | Fail | Reset email not received (Bug-01) |
+| TC-09 | Chat Send/Receive | EchoGPT Android App | Android 13 | v2.1.0 | 2025-11-10 12:25 PM | Pass | Bot response received |
+| TC-10 | File Upload (<5MB) | Chrome | Windows 10 | Web live version | 2025-11-10 12:30 PM | Pass | File uploaded successfully |
+| TC-11 | File Upload Large (50MB) | Chrome | Windows 10 | Web live version | 2025-11-10 12:33 PM | Pass | Proper size error displayed |
+| TC-12 | Form Validation | Chrome | Windows 10 | Web live version | 2025-11-10 12:35 PM | Pass | Validation working properly |
+| TC-13 | Responsive Navigation | Chrome DevTools | Windows 10 | Web live version | 2025-11-10 12:37 PM | Pass | Menu responsive at all breakpoints |
+| TC-14 | Offline Handling | EchoGPT Android | Android 13 | v2.1.0 | 2025-11-10 12:40 PM | Fail | App freezes on sending message offline (Bug-02) |
+| TC-15 | Session Timeout | Chrome | Windows 10 | Web live version | 2025-11-10 12:50 PM | Pass | Session expired and auto logout |
+| TC-16 | Accessibility Labels | Chrome + NVDA | Windows 10 | Web live version | 2025-11-10 1:00 PM | Fail | Missing ARIA labels for buttons (Bug-03) |
+| TC-17 | Color Contrast | Chrome | Windows 10 | Web live version | 2025-11-10 1:05 PM | Pass | Contrast mostly acceptable |
+| TC-18 | XSS Attempt | Chrome | Windows 10 | Web live version | 2025-11-10 1:10 PM | Pass | Script sanitized |
+| TC-19 | Insecure Storage Check | Android File System | Android 12 | v1.0.3 | 2025-11-10 1:12 PM | Pass | No plaintext token stored |
+| TC-20 | API Error Handling | Chrome | Windows 10 | Web live version | 2025-11-10 1:15 PM | Pass | Friendly error displayed; no stacktrace |
+| TC-21 | UI Layout Screens | Samsung A52 | Android 13 | v2.1.0 | 2025-11-10 1:20 PM | Pass | Layout adjusts properly |
+| TC-22 | Orientation Change | Pixel 6 | Android 14 | v1.0.3 | 2025-11-10 1:25 PM | Pass | State preserved on rotation |
+| TC-23 | Performance Load Time | Chrome | Windows 10 | Web live version | 2025-11-10 1:28 PM | Pass | Load time <5s |
+| TC-24 | Logout Flow | Chrome | Windows 10 | Web live version | 2025-11-10 1:32 PM | Pass | User logged out correctly |
+| TC-25 | Push Notifications | Samsung A52 | Android 13 | v1.0.3 | 2025-11-10 1:35 PM | Not Tested | No test environment |
+| TC-26 | Error Messages Usability | EchoGPT App | Android 13 | v2.1.0 | 2025-11-10 1:40 PM | Pass | Messages clear |
+| TC-27 | Rate Limiting | Chrome | Windows 10 | Web live version | 2025-11-10 1:42 PM | Pass | Requests throttled properly |
+| TC-28 | Data Persistence | Pixel 6 | Android 14 | v1.0.3 | 2025-11-10 1:45 PM | Pass | Data persisted correctly |
+| TC-29 | Cross Browser Test | Firefox/Edge | Windows 10 | Web live version | 2025-11-10 1:50 PM | Pass | UI consistent |
+| TC-30 | SQL Injection | Chrome | Windows 10 | Web live version | 2025-11-10 1:55 PM | Pass | Input sanitized |
+
+
+3. Bug Reports
+
+Bug 01 — Password Reset Email Not Received
+
+### **Bug ID:** BUG-001  
+### **Title:** Password reset email is not delivered after submitting "Forgot Password"  
+### **Severity:** High  
+### **Priority:** High  
+### **Status:** Open  
+
+### **Environment:**  
+- Device: Windows 10 (Chrome 129)  
+- Platform: https://apptestingservice.com  
+- Network: Stable WiFi  
+- Date: 2025-11-10  
+
+### **Steps to Reproduce:**  
+1. Open the website https://apptestingservice.com  
+2. Click on **Forgot Password**  
+3. Enter a registered email  
+4. Click **Submit**  
+5. Wait 5–10 minutes  
+6. Check inbox & spam folder  
+
+### **Expected Result:**  
+A password reset email should be received immediately or within 1–2 minutes.
+
+### **Actual Result:**  
+No email received in inbox or spam.  
+No confirmation email visible in server logs.
+
+## Bug 02 — App Freezes When Sending Message Offline
+
+### **Bug ID:** BUG-002  
+### **Title:** EchoGPT app freezes when trying to send a message with no internet  
+### **Severity:** Critical  
+### **Priority:** High  
+### **Status:** Open  
+
+### **Environment:**  
+- Device: Samsung A52  
+- OS: Android 13  
+- App: EchoGPT v2.1.0  
+- Network: Mobile Data OFF  
+- Date: 2025-11-10  
+
+### **Steps to Reproduce:**  
+1. Open the **EchoGPT Chat App**  
+2. Turn off Wi-Fi and mobile data  
+3. Type a message  
+4. Tap **Send**  
+5. Observe the UI  
+
+### **Expected Result:**  
+A proper error message like **“No internet connection”** should appear.  
+The app should remain responsive.
+
+### **Actual Result:**  
+The app **freezes** for 10–12 seconds and sometimes becomes unresponsive.  
+Force close is required in some cases.
+
+## Bug 03 — Missing ARIA Labels for Buttons (Accessibility Issue)
+
+### **Bug ID:** BUG-003  
+### **Title:** Missing ARIA labels for interactive buttons on homepage (echogpt.live)  
+### **Severity:** Medium  
+### **Priority:** Medium  
+### **Status:** Open  
+
+### **Environment:**  
+- Device: Windows 10  
+- Browser: Chrome 129  
+- Accessibility Tools: NVDA screen reader  
+- Website: https://echogpt.live  
+- Date: 2025-11-10  
+
+### **Steps to Reproduce:**  
+1. Open **https://echogpt.live**  
+2. Turn on **NVDA** or **VoiceOver**  
+3. Navigate through the main banner and top buttons  
+4. Listen to screen reader output  
+
+### **Expected Result:**  
+Screen reader should read button names clearly, such as:  
+- “Start Chat”  
+- “Login”  
+- “Sign Up”
+
+### **Actual Result:**  
+Screen reader reads:  
+- “Button… button…”  
+- “Clickable… clickable item…”  
+No meaningful labels available.
+
