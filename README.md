@@ -1,4 +1,4 @@
-1. Test Plan :
+## 1. Test Plan :
 
 i. Scope:
 
@@ -20,7 +20,7 @@ iii. Types of tests to run:
     Accessibility — keyboard navigation, screen-reader labels, color contrast, tappable target sizes.
     Exploratory testing — 30–45 minute session per app and site to look for unexpected issues.
 
-2. Test Cases:
+## 2. Test Cases:
 
 | ID | Title | Steps | Expected Result | Severity |
 |----|--------|--------|----------------|----------|
@@ -56,7 +56,7 @@ iii. Types of tests to run:
 | TC-30 | SQL Injection Input (Negative) | 1. Enter `' OR '1'='1` in fields → Submit | Input sanitized; no bypass or data exposure | High |
 
 
-3. Test Execution Log
+## 3. Test Execution Log
 
 | TC ID | Test Title | Device / Browser | OS / Version | App/Web Version | Date & Time | Status | Notes |
 |-------|-------------|------------------|---------------|------------------|--------------|--------|--------|
@@ -92,15 +92,15 @@ iii. Types of tests to run:
 | TC-30 | SQL Injection | Chrome | Windows 11 | Web live version | 2025-12-02 1:55 PM | Pass | Input sanitized |
 
 
-4. Bug Reports
+## 4. Bug Reports
 
 ## Bug 01 — Password Reset Email Not Received
 
-### **Bug ID:** BUG-001  
-### **Title:** Password reset email is not delivered after submitting "Forgot Password"  
-### **Severity:** High  
-### **Priority:** High  
-### **Status:** Open  
+### **Bug ID: BUG-001** 
+Title: Password reset email is not delivered after submitting "Forgot Password"  
+Severity: High  
+Priority: High  
+Status: Open  
 
 ### **Environment:**  
 - Device: Windows 11 (Chrome)  
@@ -127,10 +127,10 @@ No confirmation email visible in server logs.
 ## Bug 02 — App Freezes When Sending Message Offline
 
 ### **Bug ID:** BUG-002  
-### **Title:** EchoGPT app freezes when trying to send a message with no internet  
-### **Severity:** Critical  
-### **Priority:** High  
-### **Status:** Open  
+Title: EchoGPT app freezes when trying to send a message with no internet  
+Severity: Critical  
+Priority: High  
+Status: Open  
 
 ### **Environment:**  
 - Device: Xiaomi Redmi Note 14  
@@ -158,10 +158,10 @@ Force close is required in some cases.
 ## Bug 03 — Missing ARIA Labels for Buttons (Accessibility Issue)
 
 ### **Bug ID:** BUG-003  
-### **Title:** Missing ARIA labels for interactive buttons on homepage (echogpt.live)  
-### **Severity:** Medium  
-### **Priority:** Medium  
-### **Status:** Open  
+Title: Missing ARIA labels for interactive buttons on homepage (echogpt.live)  
+Severity: Medium  
+Priority: Medium  
+Status: Open  
 
 ### **Environment:**  
 - Device: Windows 11
@@ -189,11 +189,14 @@ Screen reader reads:
 No meaningful labels available.
 
 
-5. Exploratory Testing Notes
+## 5. Exploratory Testing Notes
 
 Date: 04 December 2025
+
 Duration: 40 minutes
+
 Tester: Koushik Roy
+
 Scope: Android Apps (AppTestingService, EchoGPT App) and Websites (echogpt.live, apptestingservice.com)
 
   ##  1. Test Charter (Mission for the Session)
@@ -336,7 +339,7 @@ Scope: Android Apps (AppTestingService, EchoGPT App) and Websites (echogpt.live,
     No critical security issues were discovered during this time window, but some functional problems significantly affect user experience.\
 
 
-6. # Short Summary Report
+## 6. Short Summary Report
 
 ## 1. Overview
 A full test cycle was executed on two Android applications (**AppTestingService** and **EchoGPT Chat App**) and two websites (**apptestingservice.com** and **echogpt.live**).  
